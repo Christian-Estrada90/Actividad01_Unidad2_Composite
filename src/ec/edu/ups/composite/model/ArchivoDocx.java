@@ -5,7 +5,6 @@
  */
 package ec.edu.ups.composite.model;
 
-import ec.edu.ups.composite.controller.ArchivoComponente;
 import ec.edu.ups.composite.controller.ArchivoComponenteAbstract;
 
 /**

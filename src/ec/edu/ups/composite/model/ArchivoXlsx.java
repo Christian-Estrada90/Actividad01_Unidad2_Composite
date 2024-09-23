@@ -5,25 +5,22 @@
  */
 package ec.edu.ups.composite.model;
 
-import ec.edu.ups.composite.controller.ArchivoComponente;
 import ec.edu.ups.composite.controller.ArchivoComponenteAbstract;
 
 /**
  *
  * @author user
  */
-public class ArchivoPDF extends ArchivoComponenteAbstract {
-    
-    private String nombre;
+public class ArchivoXlsx extends ArchivoComponenteAbstract{
+     private String nombre;
     private int tamano;
-    
-    public ArchivoPDF(String nombre, int tamano) {
+
+    public ArchivoXlsx(String nombre, int tamano) {
         this.nombre = nombre;
         this.tamano = tamano;
     }
 
-
- @Override
+    @Override
     public String getNombre() {
         return nombre;
     }
@@ -32,5 +29,4 @@ public class ArchivoPDF extends ArchivoComponenteAbstract {
     public int getTamano() {
         return tamano;
     }
-    
 }

@@ -5,10 +5,10 @@
  */
 package ec.edu.ups.composite.model;
 
-import ec.edu.ups.composite.controller.ArchivoComponente;
-import ec.edu.ups.composite.controller.ArchivoComponenteAbstract;
 import java.util.ArrayList;
 import java.util.List;
+
+import ec.edu.ups.composite.controller.ArchivoComponenteAbstract;
 
 /**
  *
