@@ -6,6 +6,6 @@ public abstract class ArchivoComponent {
 	
 	public abstract String mostrarArchivo();
 
-	public abstract String getNombre();	
+	public abstract String getTamanio();	
 	
 }

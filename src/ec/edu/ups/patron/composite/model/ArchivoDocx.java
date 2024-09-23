@@ -2,7 +2,7 @@ package ec.edu.ups.patron.composite.model;
 
 import ec.edu.ups.patron.composite.controller.ArchivoComponent;
 
-public class ArchivoPDF extends ArchivoComponent{
+public class ArchivoDocx extends ArchivoComponent{
 	
 	@Override
 	public String mostrarArchivo() {
