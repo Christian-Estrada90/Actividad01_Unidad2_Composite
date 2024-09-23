@@ -1,0 +1,6 @@
+ec/edu/ups/composite/model/ArchivoDocx.class
+ec/edu/ups/composite/model/ArchivoXlsx.class
+ec/edu/ups/composite/controller/ArchivoComponente.class
+ec/edu/ups/composite/controller/Main.class
+ec/edu/ups/composite/model/ArchivoPDF.class
+ec/edu/ups/composite/model/Carpeta.class
