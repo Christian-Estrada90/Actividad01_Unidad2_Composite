@@ -1,6 +1,10 @@
-ec/edu/ups/composite/model/ArchivoDocx.class
-ec/edu/ups/composite/model/ArchivoXlsx.class
-ec/edu/ups/composite/controller/ArchivoComponente.class
-ec/edu/ups/composite/controller/Main.class
-ec/edu/ups/composite/model/ArchivoPDF.class
-ec/edu/ups/composite/model/Carpeta.class
+ec\edu\ups\composite\view\MenuPrincipal$2.class
+ec\edu\ups\composite\model\ArchivoDocx.class
+ec\edu\ups\composite\model\ArchivoPDF.class
+ec\edu\ups\composite\model\Carpeta.class
+ec\edu\ups\composite\model\ArchivoXlsx.class
+ec\edu\ups\composite\model\ArchivoComponenteAbstract.class
+ec\edu\ups\composite\controller\Actividad01_Unidad2_Composite.class
+ec\edu\ups\composite\view\MenuPrincipal$1.class
+ec\edu\ups\composite\controller\CarpetaController.class
+ec\edu\ups\composite\view\MenuPrincipal.class
