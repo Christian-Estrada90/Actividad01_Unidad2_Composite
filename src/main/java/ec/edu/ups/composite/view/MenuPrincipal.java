@@ -4,17 +4,25 @@
  */
 package ec.edu.ups.composite.view;
 
+import ec.edu.ups.composite.controller.CarpetaArchivoController;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Santiago Parra
+ * @author Grupo 3
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+
+    CarpetaArchivoController carpetaArchivoController;
+    String pathCarpeta = "";
+    String pathArchivo = "";
 
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        carpetaArchivoController = new CarpetaArchivoController();
     }
 
     /**
@@ -26,113 +34,161 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        cmb_tipo_archivo = new javax.swing.JComboBox<>();
+        txt_nombre_archivo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        btn_agregar_archivo = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btn_eliminar_archivo = new javax.swing.JButton();
+        bnt_salir = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tre_arbolArchivo = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PDF", "XLSX", "DOCX", "Subcarpeta" }));
+        cmb_tipo_archivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PDF", "XLSX", "DOCX", "Subcarpeta" }));
 
-        jTextField1.setText("jTextField1");
+        jLabel1.setText("Nombre Archivo / Carpeta");
 
-        jTextField2.setText("jTextField2");
-
-        jLabel1.setText("Archivo");
-
-        jLabel2.setText("Tamaño");
-
-        jButton1.setText("Agregar");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Archivo", "Tipo", "Tamaño", "Ruta"
+        btn_agregar_archivo.setText("Agregar Archivo");
+        btn_agregar_archivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregar_archivoActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        });
 
         jLabel3.setText("Tipo Archivo");
 
-        jButton2.setText("Buscar Archivo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_eliminar_archivo.setText("Eliminar Archivo");
+        btn_eliminar_archivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_eliminar_archivoActionPerformed(evt);
             }
         });
+
+        bnt_salir.setText("Salir");
+        bnt_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_salirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        tre_arbolArchivo.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        tre_arbolArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tre_arbolArchivoMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tre_arbolArchivo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmb_tipo_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addComponent(btn_agregar_archivo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_eliminar_archivo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bnt_salir))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 65, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_nombre_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_tipo_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombre_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_agregar_archivo)
+                    .addComponent(btn_eliminar_archivo)
+                    .addComponent(bnt_salir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_eliminar_archivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar_archivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        if (pathArchivo.equals("")) {
+            carpetaArchivoController.eliminarCarpeta(pathCarpeta);
+
+        } else {
+            carpetaArchivoController.eliminarArchivo(pathCarpeta, pathArchivo);
+        }
+
+        this.tre_arbolArchivo.setModel(carpetaArchivoController.mostrar());
+
+    }//GEN-LAST:event_btn_eliminar_archivoActionPerformed
+
+    private void bnt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_salirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_bnt_salirActionPerformed
+
+    private void btn_agregar_archivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregar_archivoActionPerformed
+        // TODO add your handling code here:
+        if (txt_nombre_archivo.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Ingrese un nombre al Archivo");
+            txt_nombre_archivo.requestFocus();
+            return;
+        }
+        carpetaArchivoController.agregarArchivo(pathCarpeta + txt_nombre_archivo.getText(), cmb_tipo_archivo.getSelectedItem().toString());
+        this.tre_arbolArchivo.setModel(carpetaArchivoController.mostrar());
+        txt_nombre_archivo.setText("");
+    }//GEN-LAST:event_btn_agregar_archivoActionPerformed
+
+    private void tre_arbolArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tre_arbolArchivoMouseClicked
+        // TODO add your handling code here:
+        if (tre_arbolArchivo.getSelectionModel().getSelectionPath() == null) {
+            return;
+        }
+
+        System.out.println(tre_arbolArchivo.getSelectionModel().getSelectionPath().toString());
+        String valor[] = tre_arbolArchivo.getSelectionModel().getSelectionPath().toString().split(",");
+        pathCarpeta = "";
+        pathArchivo = "";
+        if (valor.length > 1) {
+            for (int i = 1; i < valor.length; i++) {
+                System.out.println("Hijos " + valor[i]);
+                if (!valor[i].contains(".")) {
+                    pathCarpeta += (valor[i].split("-")[0]).trim() + "/";
+
+                    System.out.println("Path Carpeta " + pathCarpeta);
+                } else {
+                    pathArchivo = (valor[i].split("-")[0]).trim();
+                }
+            }
+        }
+    }//GEN-LAST:event_tre_arbolArchivoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -170,15 +226,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton bnt_salir;
+    private javax.swing.JButton btn_agregar_archivo;
+    private javax.swing.JButton btn_eliminar_archivo;
+    private javax.swing.JComboBox<String> cmb_tipo_archivo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTree tre_arbolArchivo;
+    private javax.swing.JTextField txt_nombre_archivo;
     // End of variables declaration//GEN-END:variables
 }

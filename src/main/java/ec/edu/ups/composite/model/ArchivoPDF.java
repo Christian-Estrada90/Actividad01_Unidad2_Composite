@@ -10,20 +10,18 @@ package ec.edu.ups.composite.model;
  */
 public class ArchivoPDF extends ArchivoComponenteAbstract {
     
-    private String nombre;
-    
-    public ArchivoPDF(String nombre) {
-        this.nombre = nombre;
-    }
-
-
- @Override
-    public String getNombre() {
-        return nombre;
+    @Override
+    public String mostrarArchivo() {
+        return "  Archivo pdf: " + this.getNombre() + " Tamanio :" + this.getTamanio() + " MB";
     }
 
     @Override
-    public int getTamano() {
+    public String toString() {
+        return "pdf {" + this.getTamanio() + '}';
+    }
+
+    @Override
+    public int getTamanio() {
         return 50;
     }
     

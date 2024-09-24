@@ -9,20 +9,20 @@ package ec.edu.ups.composite.model;
  * @author Grupo 3
  */
 public class ArchivoDocx extends ArchivoComponenteAbstract {
-    private String nombre;
 
-    public ArchivoDocx(String nombre) {
-        this.nombre = nombre;
+    @Override
+    public String mostrarArchivo() {
+        return "  Archivo docx: " + this.getNombre() + " Tamanio :" + this.getTamanio() + " MB";
     }
 
     @Override
-    public String getNombre() {
-        return nombre;
+    public String toString() {
+        return "docx {" + this.getTamanio() + '}';
     }
 
     @Override
-    public int getTamano() {
+    public int getTamanio() {
         return 150;
     }
-    
+
 }
